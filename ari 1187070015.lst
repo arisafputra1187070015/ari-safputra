@@ -1,0 +1,208 @@
+
+ASEM-51 V1.3                                         Copyright (c) 2002 by W.W. Heinz                                         PAGE 1
+
+
+
+
+
+       MCS-51 Family Macro Assembler   A S E M - 5 1   V 1.3
+       =====================================================
+
+
+
+	Source File:	C:\Users\alvin\Downloads\ari p.SISMIK UTS\KODING ARI.asm
+	Object File:	C:\Users\alvin\Downloads\ari p.SISMIK UTS\KODING ARI.hex
+	List File:	C:\Users\alvin\Downloads\ari p.SISMIK UTS\KODING ARI.lst
+
+
+
+ Line  I  Addr  Code            Source
+
+    1:		N      0000	org 00h
+    2:
+    3:	  0000			start:
+    4:
+    5:	  0000	75 90 FF	MOV P1,#11111111B ;LOOP KE 1
+    6:	  0003	75 B0 FF	MOV P3,#11111111B
+    7:	  0006	75 A0 FF	MOV P2,#11111111B
+    8:	  0009	11 8B		acall delay
+    9:	  000B	75 90 FE	mov p1,#11111110B
+   10:	  000E	11 8B		acall delay
+   11:	  0010	75 90 FD	mov p1,#11111101B
+   12:	  0013	11 8B		acall delay
+   13:	  0015	75 90 FB	mov p1,#11111011B
+   14:	  0018	11 8B		acall delay
+   15:	  001A	75 90 F7	mov p1,#11110111B
+   16:	  001D	11 8B		acall delay
+   17:	  001F	75 90 EF	mov p1,#11101111B
+   18:	  0022	11 8B		acall delay
+   19:	  0024	75 90 DF	mov p1,#11011111B
+   20:	  0027	11 8B		acall delay
+   21:	  0029	75 90 BF	mov p1,#10111111B
+   22:	  002C	11 8B		acall delay
+   23:	  002E	75 90 7F	mov p1,#01111111B
+   24:	  0031	11 8B		acall delay
+   25:	  0033	75 90 FF	MOV P1,#11111111B
+   26:
+   27:
+   28:	  0036	75 A0 FE	mov p2,#11111110B
+   29:	  0039	11 8B		acall delay
+   30:	  003B	75 A0 FD	mov p2,#11111101B
+   31:	  003E	11 8B		acall delay
+   32:	  0040	75 A0 FB	mov p2,#11111011B
+   33:	  0043	11 8B		acall delay
+   34:	  0045	75 A0 F7	mov p2,#11110111B
+   35:	  0048	11 8B		acall delay
+   36:	  004A	75 A0 EF	mov p2,#11101111B
+   37:	  004D	11 8B		acall delay
+   38:	  004F	75 A0 DF	mov p2,#11011111B
+   39:	  0052	11 8B		acall delay
+   40:	  0054	75 A0 BF	mov p2,#10111111B
+   41:	  0057	11 8B		acall delay
+   42:	  0059	75 A0 7F	mov p2,#01111111B
+   43:	  005C	11 8B		acall delay
+
+ASEM-51 V1.3                                         Copyright (c) 2002 by W.W. Heinz                                         PAGE 2
+
+
+
+ Line  I  Addr  Code            Source
+
+   44:	  005E	75 A0 FF	MOV P2,#11111111B
+   45:
+   46:	  0061	75 B0 FE	mov p3,#11111110B
+   47:	  0064	11 8B		acall delay
+   48:	  0066	75 B0 FD	mov p3,#11111101B
+   49:	  0069	11 8B		acall delay
+   50:	  006B	75 B0 FB	mov p3,#11111011B
+   51:	  006E	11 8B		acall delay
+   52:	  0070	75 B0 F7	mov p3,#11110111B
+   53:	  0073	11 8B		acall delay
+   54:	  0075	75 B0 EF	mov p3,#11101111B
+   55:	  0078	11 8B		acall delay
+   56:	  007A	75 B0 DF	mov p3,#11011111B
+   57:	  007D	11 8B		acall delay
+   58:	  007F	75 B0 BF	mov p3,#10111111B
+   59:	  0082	11 8B		acall delay
+   60:	  0084	75 B0 7F	mov p3,#01111111B
+   61:	  0087	11 8B		acall delay
+   62:	  0089	01 00		ajmp start
+   63:
+   64:	  008B	7F 00		delay: mov r7,#00h
+   65:	  008D	7E 00		ulang2: mov r6,#00h
+   66:	  008F	7D 00		ulang1: mov r5,#00h
+   67:	  0091	0D		ulang: inc r5
+   68:	  0092	BD 40 FC	cjne r5,#40h,ulang
+   69:	  0095	0E		inc r6
+   70:	  0096	BE 40 F6	cjne r6,#40h,ulang1
+   71:	  0099	0F		inc r7
+   72:	  009A	BF 40 F0	cjne r7,#40h,ulang2
+   73:	  009D	22		ret
+   74:				end
+
+
+
+
+
+                     register banks used:  ---
+
+                     no errors
+
+
+
+
+ASEM-51 V1.3                                         Copyright (c) 2002 by W.W. Heinz                                         PAGE 3
+
+
+
+
+
+	       L I S T   O F   S Y M B O L S
+	       =============================
+
+
+SYMBOL				  TYPE     VALUE	LINE
+------------------------------------------------------------
+??ASEM_51			  NUMBER    8051
+??VERSION			  NUMBER    0130
+AC				  BIT	      D6
+ACC				  DATA	      E0
+B				  DATA	      F0
+CY				  BIT	      D7
+DELAY				  CODE	    008B	  64
+DPH				  DATA	      83
+DPL				  DATA	      82
+EA				  BIT	      AF
+ES				  BIT	      AC
+ET0				  BIT	      A9
+ET1				  BIT	      AB
+EX0				  BIT	      A8
+EX1				  BIT	      AA
+EXTI0				  CODE	    0003
+EXTI1				  CODE	    0013
+F0				  BIT	      D5
+IE				  DATA	      A8
+IE0				  BIT	      89
+IE1				  BIT	      8B
+INT0				  BIT	      B2
+INT1				  BIT	      B3
+IP				  DATA	      B8
+IT0				  BIT	      88
+IT1				  BIT	      8A
+OV				  BIT	      D2
+P				  BIT	      D0
+P0				  DATA	      80
+P1				  DATA	      90
+P2				  DATA	      A0
+P3				  DATA	      B0
+PCON				  DATA	      87
+PS				  BIT	      BC
+PSW				  DATA	      D0
+PT0				  BIT	      B9
+PT1				  BIT	      BB
+PX0				  BIT	      B8
+PX1				  BIT	      BA
+RB8				  BIT	      9A
+RD				  BIT	      B7
+REN				  BIT	      9C
+RESET				  CODE	    0000
+RI				  BIT	      98
+RS0				  BIT	      D3
+RS1				  BIT	      D4
+RXD				  BIT	      B0
+SBUF				  DATA	      99
+SCON				  DATA	      98
+SINT				  CODE	    0023
+
+ASEM-51 V1.3                                         Copyright (c) 2002 by W.W. Heinz                                         PAGE 4
+
+
+
+SYMBOL				  TYPE     VALUE	LINE
+------------------------------------------------------------
+SM0				  BIT	      9F
+SM1				  BIT	      9E
+SM2				  BIT	      9D
+SP				  DATA	      81
+START				  CODE	    0000	   3
+T0				  BIT	      B4
+T1				  BIT	      B5
+TB8				  BIT	      9B
+TCON				  DATA	      88
+TF0				  BIT	      8D
+TF1				  BIT	      8F
+TH0				  DATA	      8C
+TH1				  DATA	      8D
+TI				  BIT	      99
+TIMER0				  CODE	    000B
+TIMER1				  CODE	    001B
+TL0				  DATA	      8A
+TL1				  DATA	      8B
+TMOD				  DATA	      89
+TR0				  BIT	      8C
+TR1				  BIT	      8E
+TXD				  BIT	      B1
+ULANG				  CODE	    0091	  67
+ULANG1				  CODE	    008F	  66
+ULANG2				  CODE	    008D	  65
+WR				  BIT	      B6
